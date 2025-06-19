@@ -44,3 +44,24 @@ button:hover {
 ol {
     padding-left: 20px;
 }
+.bunker-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fafbfc;
+}
+.bunker-table th, .bunker-table td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: left;
+}
+.bunker-table th {
+    background: #0078d7;
+    color: #fff;
+}
+.bunker-table tr:nth-child(even) {
+    background: #f4f4f4;
+}
+.bunker-table tr:hover {
+    background: #e6f0fa;
+}

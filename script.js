@@ -56,3 +56,37 @@ function generateCodes() {
         resultsDiv.innerHTML += '<ol>' + codes.map(code => `<li>${code}</li>`).join('') + '</ol>';
     }
 }
+
+// Display CSV table
+function displayCSVTable() {
+    const csvData = `bunker,code 
+00,01011000
+01,04222021
+02,Blue Key
+03,30198805
+04,Red Key
+05,Red Key
+06 ,Red Key
+07/08,Blue Key
+09,Red Key
+10,31547206
+11,NOT WORTH IT
+TV Station,01859462
+Farm,36158294
+Prison,13584927`;
+    const lines = csvData.trim().split('\n');
+    const headers = lines[0].split(',');
+    let html = '<table class="bunker-table"><thead><tr>';
+    headers.forEach(h => html += `<th>${h.trim()}</th>`);
+    html += '</tr></thead><tbody>';
+    for (let i = 1; i < lines.length; i++) {
+        const cells = lines[i].split(',');
+        html += '<tr>';
+        cells.forEach(c => html += `<td>${c.trim()}</td>`);
+        html += '</tr>';
+    }
+    html += '</tbody></table>';
+    document.getElementById('csvTable').innerHTML = html;
+}
+
+displayCSVTable();
